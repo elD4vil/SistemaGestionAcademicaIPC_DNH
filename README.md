@@ -58,7 +58,7 @@ Una vez que Docker está instalado, sigue estos pasos:
 2. Ejecuta el siguiente comando para iniciar el contenedor:
 
    ```sh
-   docker-compose up --build
+   docker-compose up
    ```
 
 3. Una vez iniciado, el proyecto estará disponible en tu navegador en la siguiente URL:
@@ -71,22 +71,8 @@ Si deseas detener la ejecución del contenedor, presiona `Ctrl + C` en la termin
 docker-compose down
 ```
 
----
-
-## 🔄 Consideraciones Adicionales
-
-- Si realizas cambios en el código, puedes reiniciar los contenedores con:
-  
-  ```sh
-  docker-compose restart
-  ```
-  
-- Para limpiar imágenes y volúmenes innecesarios, puedes ejecutar:
-  
-  ```sh
-  docker system prune -a
-  ```
-
+4. Para iniciar secion en la pagina la contraseña es : 1234
+5. 
 ---
 
 ¡Listo! Ahora puedes ejecutar correctamente el proyecto 🚀
