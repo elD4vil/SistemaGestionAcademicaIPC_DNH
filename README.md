@@ -58,7 +58,7 @@ Una vez que Docker está instalado, sigue estos pasos:
 2. Ejecuta el siguiente comando para iniciar el contenedor:
 
    ```sh
-   docker-compose up
+   docker-compose up -d
    ```
 
 3. Una vez iniciado, el proyecto estará disponible en tu navegador en la siguiente URL:
