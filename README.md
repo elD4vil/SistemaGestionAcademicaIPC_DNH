@@ -72,7 +72,6 @@ docker-compose down
 ```
 
 4. Para iniciar secion en la pagina la contraseña es : 1234
-5. 
 ---
 
 ¡Listo! Ahora puedes ejecutar correctamente el proyecto 🚀
