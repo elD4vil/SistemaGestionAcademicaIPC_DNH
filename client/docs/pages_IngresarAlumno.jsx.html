@@ -1,4 +1,32 @@
-import React, { useState, useEffect } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/IngresarAlumno.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/IngresarAlumno.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState, useEffect } from "react";
 import { useDropzone } from 'react-dropzone';
 import { useNavigate } from "react-router-dom";
 import * as XLSX from 'xlsx';
@@ -43,14 +71,14 @@ function IngresarAlumno() {
 
   const OverlayMessage = ({ message, onClose }) => {
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-        <div className="bg-white p-4 rounded shadow-lg">
-          <p>{message}</p>
-          <button onClick={onClose} className="mt-4 px-4 py-2 bg-red-500 text-white rounded">
+      &lt;div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        &lt;div className="bg-white p-4 rounded shadow-lg">
+          &lt;p>{message}&lt;/p>
+          &lt;button onClick={onClose} className="mt-4 px-4 py-2 bg-red-500 text-white rounded">
             Cerrar
-          </button>
-        </div>
-      </div>
+          &lt;/button>
+        &lt;/div>
+      &lt;/div>
     );
   };
 
@@ -169,11 +197,11 @@ function IngresarAlumno() {
       const processedData = [];
       jsonData.forEach((row) => {
         if (
-          row.length > 0 &&
-          row[0] && // Verifica que row[0] no sea undefined
-          !row[0].includes("Situación Periodo") &&
-          !row[0].includes("P.S.P.") &&
-          !row[0].includes("Situación Acumulada") &&
+          row.length > 0 &amp;&amp;
+          row[0] &amp;&amp; // Verifica que row[0] no sea undefined
+          !row[0].includes("Situación Periodo") &amp;&amp;
+          !row[0].includes("P.S.P.") &amp;&amp;
+          !row[0].includes("Situación Acumulada") &amp;&amp;
           !row[0].includes("P.G.A.")
         ) {
           processedData.push({
@@ -227,7 +255,7 @@ function IngresarAlumno() {
   };
 
   const handleConfirmar = () => {
-    if (student.rut && data) {
+    if (student.rut &amp;&amp; data) {
       enviarAsignaturasDestino(student.rut, student.carrera);
       enviarHistorialAcademico(student.rut, data);
 
@@ -246,17 +274,17 @@ function IngresarAlumno() {
   };
 
   return (
-    <div className="p-8 bg-gray-100 h-screen flex justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-2/3 overflow-y-auto mt-8">
+    &lt;div className="p-8 bg-gray-100 h-screen flex justify-center">
+      &lt;div className="bg-white p-8 rounded-lg shadow-lg w-2/3 overflow-y-auto mt-8">
         {step === 1 ? (
-          <>
-            <div className="flex items-start justify-between">
-              <div className="grid grid-cols-2 gap-4 flex-grow">
-                <div className="col-span-2">
-                  <label className="block font-semibold mb-2">Rut:</label>
-                  <div className="flex items-center">
-                    <div className="relative w-full">
-                      <input
+          &lt;>
+            &lt;div className="flex items-start justify-between">
+              &lt;div className="grid grid-cols-2 gap-4 flex-grow">
+                &lt;div className="col-span-2">
+                  &lt;label className="block font-semibold mb-2">Rut:&lt;/label>
+                  &lt;div className="flex items-center">
+                    &lt;div className="relative w-full">
+                      &lt;input
                         type="text"
                         value={student.rut}
                         onChange={handleRutChange}
@@ -264,179 +292,179 @@ function IngresarAlumno() {
                         className="border p-3 rounded w-full"
                         style={{ width: '400px' }}
                       />
-                      {filteredStudents.length > 0 && (
-                        <ul className="absolute z-10 border rounded mt-1 w-full bg-white max-h-40 overflow-y-auto">
+                      {filteredStudents.length > 0 &amp;&amp; (
+                        &lt;ul className="absolute z-10 border rounded mt-1 w-full bg-white max-h-40 overflow-y-auto">
                           {filteredStudents.map((student) => (
-                            <li
+                            &lt;li
                               key={student.rut}
                               onClick={() => handleSelectRut(student)}
                               className="p-2 cursor-pointer hover:bg-gray-200"
                             >
                               {student.rut} - {student.nombre}
-                            </li>
+                            &lt;/li>
                           ))}
-                        </ul>
+                        &lt;/ul>
                       )}
-                    </div>
-                    <button
+                    &lt;/div>
+                    &lt;button
                       onClick={handleVerifyStudent}
                       className="ml-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-700"
                     >
                       Verificar
-                    </button>
-                    <Modal
+                    &lt;/button>
+                    &lt;Modal
                       isOpen={isModalOpen}
                       onClose={() => setIsModalOpen(false)}
                       title="Error"
                       message="El estudiante no se encuentra en la lista de alumnos sin historial."
                     />
-                  </div>
-                </div>
-                <div className="col-span-2">
-                  <label className="block font-semibold mb-2">Nombre:</label>
-                  <input
+                  &lt;/div>
+                &lt;/div>
+                &lt;div className="col-span-2">
+                  &lt;label className="block font-semibold mb-2">Nombre:&lt;/label>
+                  &lt;input
                     type="text"
                     value={student.nombre}
                     onChange={(e) => handleInputChange("nombre", e.target.value)}
                     className="w-full px-3 py-2 border rounded"
                   />
-                </div>
-                <div className="col-span-1">
-                  <label className="block font-semibold mb-2">Carrera Destino:</label>
-                  <select
+                &lt;/div>
+                &lt;div className="col-span-1">
+                  &lt;label className="block font-semibold mb-2">Carrera Destino:&lt;/label>
+                  &lt;select
                     value={student.carrera}
                     onChange={(e) => handleInputChange("carrera", e.target.value)}
                     className="w-full px-3 py-2 border rounded"
                   >
-                    <option value="">Selecciona una carrera</option>
+                    &lt;option value="">Selecciona una carrera&lt;/option>
                     {careers.map((career, index) => (
-                      <option key={index} value={career.carrera}>
+                      &lt;option key={index} value={career.carrera}>
                         {career.carrera}
-                      </option>
+                      &lt;/option>
                     ))}
-                  </select>
-                </div>
-                <div className="col-span-1">
-                  <label className="block font-semibold mb-2">Año de Ingreso:</label>
-                  <input
+                  &lt;/select>
+                &lt;/div>
+                &lt;div className="col-span-1">
+                  &lt;label className="block font-semibold mb-2">Año de Ingreso:&lt;/label>
+                  &lt;input
                     type="text"
                     value={student.año}
                     onChange={(e) => handleInputChange("año", e.target.value)}
                     className="w-full px-3 py-2 border rounded"
                   />
-                </div>
-              </div>
-            </div>
+                &lt;/div>
+              &lt;/div>
+            &lt;/div>
 
-            <div className="mt-8">
-              <h2 className="font-bold text-xl mb-4">Historial académico</h2>
+            &lt;div className="mt-8">
+              &lt;h2 className="font-bold text-xl mb-4">Historial académico&lt;/h2>
 
               {fileName ? (
-                <div className="bg-gray-300 p-6 rounded-lg flex flex-col justify-center items-center">
-                  <RiFileExcel2Fill size={100}/>
-                  <p className="text-gray-800 mb-2 font-semibold">{fileName}</p>
-                  <button
+                &lt;div className="bg-gray-300 p-6 rounded-lg flex flex-col justify-center items-center">
+                  &lt;RiFileExcel2Fill size={100}/>
+                  &lt;p className="text-gray-800 mb-2 font-semibold">{fileName}&lt;/p>
+                  &lt;button
                     onClick={handleDeleteFile}
                     className="mt-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
                   >
                     Eliminar archivo
-                  </button>
-                </div>
+                  &lt;/button>
+                &lt;/div>
               ) : (
-                <div
+                &lt;div
                   {...getRootProps()}
                   className="bg-gray-300 p-6 rounded-lg flex justify-center items-center cursor-pointer"
                 >
-                  <input {...getInputProps()} />
-                  <p className="ml-4 text-gray-600 text-center">
+                  &lt;input {...getInputProps()} />
+                  &lt;p className="ml-4 text-gray-600 text-center">
                     Arrastra un archivo Excel aquí, o haz clic para seleccionarlo
-                  </p>
-                </div>
+                  &lt;/p>
+                &lt;/div>
               )}
-            </div>
+            &lt;/div>
 
-            <button
+            &lt;button
               onClick={handleContinue}
               className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
             >
               Continuar
-            </button>
-          </>
+            &lt;/button>
+          &lt;/>
         ) : (
-          <>
-            <h2 className="text-2xl font-bold mb-6">Confirmar Datos del Alumno</h2>
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4">Datos Personales</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="font-semibold">Nombre:</label>
-                  <p>{student.nombre}</p>
-                </div>
-                <div>
-                  <label className="font-semibold">Rut:</label>
-                  <p>{student.rut}</p>
-                </div>
-                <div>
-                  <label className="font-semibold">Carrera Destino:</label>
-                  <p>{student.carrera}</p>
-                </div>
-                <div>
-                  <label className="font-semibold">Año de Ingreso:</label>
-                  <p>{student.año}</p>
-                </div>
-              </div>
-            </div>
+          &lt;>
+            &lt;h2 className="text-2xl font-bold mb-6">Confirmar Datos del Alumno&lt;/h2>
+            &lt;div className="mb-8">
+              &lt;h3 className="text-xl font-semibold mb-4">Datos Personales&lt;/h3>
+              &lt;div className="grid grid-cols-2 gap-4">
+                &lt;div>
+                  &lt;label className="font-semibold">Nombre:&lt;/label>
+                  &lt;p>{student.nombre}&lt;/p>
+                &lt;/div>
+                &lt;div>
+                  &lt;label className="font-semibold">Rut:&lt;/label>
+                  &lt;p>{student.rut}&lt;/p>
+                &lt;/div>
+                &lt;div>
+                  &lt;label className="font-semibold">Carrera Destino:&lt;/label>
+                  &lt;p>{student.carrera}&lt;/p>
+                &lt;/div>
+                &lt;div>
+                  &lt;label className="font-semibold">Año de Ingreso:&lt;/label>
+                  &lt;p>{student.año}&lt;/p>
+                &lt;/div>
+              &lt;/div>
+            &lt;/div>
 
-            <h3 className="text-xl font-semibold mb-4">Datos Académicos</h3>
-            <div style={{ overflowX: "auto" }}>
-              <table border="1" cellPadding="10" style={{ width: "100%", textAlign: "center" }}>
-                <thead>
-                  <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Nota</th>
-                    <th>Régimen</th>
-                    <th>Nivel</th>
-                    <th>Año</th>
-                    <th>Periodo</th>
-                    <th>Créditos</th>
-                    <th>Hrs. Presenciales</th>
-                    <th>Estado</th>
-                  </tr>
-                </thead>
-                <tbody>
+            &lt;h3 className="text-xl font-semibold mb-4">Datos Académicos&lt;/h3>
+            &lt;div style={{ overflowX: "auto" }}>
+              &lt;table border="1" cellPadding="10" style={{ width: "100%", textAlign: "center" }}>
+                &lt;thead>
+                  &lt;tr>
+                    &lt;th>Código&lt;/th>
+                    &lt;th>Nombre&lt;/th>
+                    &lt;th>Nota&lt;/th>
+                    &lt;th>Régimen&lt;/th>
+                    &lt;th>Nivel&lt;/th>
+                    &lt;th>Año&lt;/th>
+                    &lt;th>Periodo&lt;/th>
+                    &lt;th>Créditos&lt;/th>
+                    &lt;th>Hrs. Presenciales&lt;/th>
+                    &lt;th>Estado&lt;/th>
+                  &lt;/tr>
+                &lt;/thead>
+                &lt;tbody>
                   {data.map((row, index) => (
-                    <tr key={index}>
-                      <td>{row.Código}</td>
-                      <td>{row.Nombre}</td>
-                      <td>{row.Nota}</td>
-                      <td>{row.Régimen}</td>
-                      <td>{row.Nivel}</td>
-                      <td>{row.Año}</td>
-                      <td>{row.Periodo}</td>
-                      <td>{row.Créditos}</td>
-                      <td>{row.HrsPresenciales}</td>
-                      <td>{row.Estado}</td>
-                    </tr>
+                    &lt;tr key={index}>
+                      &lt;td>{row.Código}&lt;/td>
+                      &lt;td>{row.Nombre}&lt;/td>
+                      &lt;td>{row.Nota}&lt;/td>
+                      &lt;td>{row.Régimen}&lt;/td>
+                      &lt;td>{row.Nivel}&lt;/td>
+                      &lt;td>{row.Año}&lt;/td>
+                      &lt;td>{row.Periodo}&lt;/td>
+                      &lt;td>{row.Créditos}&lt;/td>
+                      &lt;td>{row.HrsPresenciales}&lt;/td>
+                      &lt;td>{row.Estado}&lt;/td>
+                    &lt;/tr>
                   ))}
-                </tbody>
-              </table>
-            </div>
+                &lt;/tbody>
+              &lt;/table>
+            &lt;/div>
 
-             <div className="flex justify-end mt-4 space-x-2">
-              <button
+             &lt;div className="flex justify-end mt-4 space-x-2">
+              &lt;button
                 onClick={handleBack}
                 className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700"
               >
                 Volver
-              </button>
-              <button
+              &lt;/button>
+              &lt;button
                 className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700"
                 onClick={handleConfirmar}
               >
                 Confirmar
-              </button>
-              <Modal
+              &lt;/button>
+              &lt;Modal
                 isOpen={isModalOpen}
                 onClose={() => {
                   setIsModalOpen(false);
@@ -445,12 +473,34 @@ function IngresarAlumno() {
                 title="Información"
                 message={modalMessage}
               />
-            </div>
-          </>
+            &lt;/div>
+          &lt;/>
         )}
-      </div>
-    </div>
+      &lt;/div>
+    &lt;/div>
   );
 }
 
-export default IngresarAlumno;
+export default IngresarAlumno;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#BotonesAlumnos">BotonesAlumnos</a></li><li><a href="global.html#BotonesCertificados">BotonesCertificados</a></li><li><a href="global.html#ConfigModal">ConfigModal</a></li><li><a href="global.html#HistorialAcademico">HistorialAcademico</a></li><li><a href="global.html#IngresarAlumno">IngresarAlumno</a></li><li><a href="global.html#IngresarListado">IngresarListado</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#Logs">Logs</a></li><li><a href="global.html#SeleccionarCarrera">SeleccionarCarrera</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jun 25 2025 12:32:06 GMT-0400 (hora estándar de Chile)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

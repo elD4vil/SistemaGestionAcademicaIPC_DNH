@@ -1,4 +1,32 @@
-import React, { useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/IngresarListado.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/IngresarListado.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as XLSX from "xlsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -142,106 +170,106 @@ const IngresarListado = () => {
 
 
   return (
-    <div className="p-8 bg-gray-100 h-screen flex justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-2/3 mt-8">
-        <div className="flex items-start justify-between">
-          <div className="col-span-2 mb-4">
-            <h2 className="font-bold text-xl mb-4">Carga Masiva de Estudiantes</h2>
+    &lt;div className="p-8 bg-gray-100 h-screen flex justify-center">
+      &lt;div className="bg-white p-8 rounded-lg shadow-lg w-2/3 mt-8">
+        &lt;div className="flex items-start justify-between">
+          &lt;div className="col-span-2 mb-4">
+            &lt;h2 className="font-bold text-xl mb-4">Carga Masiva de Estudiantes&lt;/h2>
             {/* Selector estilizado */}
-            <label className="flex items-center border border-gray-300 rounded-md px-4 py-2 cursor-pointer hover:bg-gray-100">
-              {fileName && (
-                <FontAwesomeIcon
+            &lt;label className="flex items-center border border-gray-300 rounded-md px-4 py-2 cursor-pointer hover:bg-gray-100">
+              {fileName &amp;&amp; (
+                &lt;FontAwesomeIcon
                   icon={faFileAlt}
                   size="2x"
                   className="text-green-500 mr-2"
                 />
               )}
-              <span className="flex-1 truncate">
+              &lt;span className="flex-1 truncate">
                 {fileName || "Seleccionar archivo"}
-              </span>
-              <input
+              &lt;/span>
+              &lt;input
                 type="file"
                 accept=".csv, .xlsx"
                 onChange={handleFileUpload}
                 className="hidden"
               />
-            </label>
-            {errorModal.open && (
-              <p className="text-red-600 mt-2">{errorModal.message}</p>
+            &lt;/label>
+            {errorModal.open &amp;&amp; (
+              &lt;p className="text-red-600 mt-2">{errorModal.message}&lt;/p>
             )}
-          </div>
-        </div>
+          &lt;/div>
+        &lt;/div>
   
-        <div className="mt-8">
-          <h2 className="font-bold text-xl mb-4">Vista Previa</h2>
+        &lt;div className="mt-8">
+          &lt;h2 className="font-bold text-xl mb-4">Vista Previa&lt;/h2>
           {students.length > 0 ? (
-            <div className="max-h-96 overflow-y-auto">
-              <table className="min-w-full bg-white">
-                <thead>
-                  <tr>
-                    <th className="py-2">R.U.N.</th>
-                    <th className="py-2">Nombre</th>
-                    <th className="py-2">Año de ingreso</th>
-                  </tr>
-                </thead>
-                <tbody>
+            &lt;div className="max-h-96 overflow-y-auto">
+              &lt;table className="min-w-full bg-white">
+                &lt;thead>
+                  &lt;tr>
+                    &lt;th className="py-2">R.U.N.&lt;/th>
+                    &lt;th className="py-2">Nombre&lt;/th>
+                    &lt;th className="py-2">Año de ingreso&lt;/th>
+                  &lt;/tr>
+                &lt;/thead>
+                &lt;tbody>
                   {students.map((student, index) => (
-                    <tr key={index}>
-                      <td className="border px-4 py-2">{student.rut}</td>
-                      <td className="border px-4 py-2">{student.nombre}</td>
-                      <td className="border px-4 py-2">{student.ano}</td>
-                    </tr>
+                    &lt;tr key={index}>
+                      &lt;td className="border px-4 py-2">{student.rut}&lt;/td>
+                      &lt;td className="border px-4 py-2">{student.nombre}&lt;/td>
+                      &lt;td className="border px-4 py-2">{student.ano}&lt;/td>
+                    &lt;/tr>
                   ))}
-                </tbody>
-              </table>
-            </div>
+                &lt;/tbody>
+              &lt;/table>
+            &lt;/div>
           ) : (
-            <p className="text-gray-600">No hay estudiantes cargados aún.</p>
+            &lt;p className="text-gray-600">No hay estudiantes cargados aún.&lt;/p>
           )}
-        </div>
+        &lt;/div>
   
-        <div className="flex justify-end mt-8">
-          <button
+        &lt;div className="flex justify-end mt-8">
+          &lt;button
             className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600"
             disabled={students.length === 0}
             onClick={() => setIsModalOpen(true)}
           >
             Enviar
-          </button>
-        </div>
+          &lt;/button>
+        &lt;/div>
   
         {/* Modal de confirmación */}
-        {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
-              <h2 className="font-bold text-xl mb-4">Confirmación</h2>
-              <p>¿Estás seguro de que deseas cargar estos estudiantes?</p>
-              <div className="flex mt-4 space-x-2 justify-end">
-                <button
+        {isModalOpen &amp;&amp; (
+          &lt;div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+            &lt;div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
+              &lt;h2 className="font-bold text-xl mb-4">Confirmación&lt;/h2>
+              &lt;p>¿Estás seguro de que deseas cargar estos estudiantes?&lt;/p>
+              &lt;div className="flex mt-4 space-x-2 justify-end">
+                &lt;button
                   className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700"
                   onClick={confirmSubmission}
                 >
                   Sí, Confirmar
-                </button>
-                <button
+                &lt;/button>
+                &lt;button
                   className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
                   onClick={() => setIsModalOpen(false)}
                 >
                   Cancelar
-                </button>
-              </div>
-            </div>
-          </div>
+                &lt;/button>
+              &lt;/div>
+            &lt;/div>
+          &lt;/div>
         )}
   
         {/* Modal de notificación */}
-        {notificationModal.open && (
-          <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
-              <h2 className="font-bold text-xl mb-4">Notificación</h2>
-              <p>{notificationModal.message}</p>
-              <div className="flex justify-center mt-4">
-                <button
+        {notificationModal.open &amp;&amp; (
+          &lt;div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+            &lt;div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
+              &lt;h2 className="font-bold text-xl mb-4">Notificación&lt;/h2>
+              &lt;p>{notificationModal.message}&lt;/p>
+              &lt;div className="flex justify-center mt-4">
+                &lt;button
                   className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
                   onClick={() => {
                     setNotificationModal({ open: false, message: "" });
@@ -249,14 +277,36 @@ const IngresarListado = () => {
                   }}
                 >
                   Aceptar
-                </button>
-              </div>
-            </div>
-          </div>
+                &lt;/button>
+              &lt;/div>
+            &lt;/div>
+          &lt;/div>
         )}
-      </div>
-    </div>
+      &lt;/div>
+    &lt;/div>
   );  
 };
 
-export default IngresarListado;
+export default IngresarListado;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#BotonesAlumnos">BotonesAlumnos</a></li><li><a href="global.html#BotonesCertificados">BotonesCertificados</a></li><li><a href="global.html#ConfigModal">ConfigModal</a></li><li><a href="global.html#HistorialAcademico">HistorialAcademico</a></li><li><a href="global.html#IngresarAlumno">IngresarAlumno</a></li><li><a href="global.html#IngresarListado">IngresarListado</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#Logs">Logs</a></li><li><a href="global.html#SeleccionarCarrera">SeleccionarCarrera</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jun 25 2025 12:32:06 GMT-0400 (hora estándar de Chile)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,4 +1,32 @@
-import React, { useEffect, useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/SeleccionarCarrera.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/SeleccionarCarrera.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchAndDownloadPdf } from '../components/descargarPDFdetallado';
 import Modal from "../components/Modal.jsx";
@@ -97,85 +125,108 @@ const SeleccionarCarrera = () => {
   };
 
   return (
-    <div className="flex flex-row min-h-screen bg-gray-200 mt-8">
+    &lt;div className="flex flex-row min-h-screen bg-gray-200 mt-8">
       {/* Sidebar con el select */}
-      <div className="w-1/4 p-6 bg-white shadow-md mt-8">
-        <h1 className="text-2xl font-bold mb-6">Selecciona una carrera</h1>
-        <select
+      &lt;div className="w-1/4 p-6 bg-white shadow-md mt-8">
+        &lt;h1 className="text-2xl font-bold mb-6">Selecciona una carrera&lt;/h1>
+        &lt;select
           className="w-full bg-gray-100 text-gray-800 px-4 py-2 rounded-lg shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-600"
           value={selectedCareer || ""}
           onChange={handleSelectChange}
         >
-          <option value="" disabled>
+          &lt;option value="" disabled>
             Selecciona una carrera
-          </option>
+          &lt;/option>
           {careers.map((carrera, index) => (
-            <option key={index} value={carrera.carrera}>
+            &lt;option key={index} value={carrera.carrera}>
               {carrera.carrera}
-            </option>
+            &lt;/option>
           ))}
-        </select>
+        &lt;/select>
 
-        <button
+        &lt;button
           onClick={handleDownloadPdf}
           className="mt-4 bg-yellow-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-yellow-700"
         >
           Descargar Certificado
-        </button>
-      </div>
+        &lt;/button>
+      &lt;/div>
 
       {/* Contenido principal */}
-      <div className="flex-1 p-6 flex flex-col relative mt-8">
+      &lt;div className="flex-1 p-6 flex flex-col relative mt-8">
         {showTable ? (
-          <div className="overflow-auto flex-1">
-            <h2 className="text-xl font-bold mb-4">Historial Académico</h2>
+          &lt;div className="overflow-auto flex-1">
+            &lt;h2 className="text-xl font-bold mb-4">Historial Académico&lt;/h2>
             {students.map(({ estudiante, historial }, index) => (
-              <div key={index} className="mb-6">
-                <h3 className="text-lg font-semibold">{estudiante.nombre} ({estudiante.rut})</h3>
-                <table className="table-auto w-full border-collapse border border-gray-300 mt-4">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2">Código IPC</th>
-                      <th className="border border-gray-300 px-4 py-2">Código Destino</th>
-                      <th className="border border-gray-300 px-4 py-2">Nombre</th>
-                      <th className="border border-gray-300 px-4 py-2">Nota</th>
-                      <th className="border border-gray-300 px-4 py-2">Año</th>
-                      <th className="border border-gray-300 px-4 py-2">Semestre</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+              &lt;div key={index} className="mb-6">
+                &lt;h3 className="text-lg font-semibold">{estudiante.nombre} ({estudiante.rut})&lt;/h3>
+                &lt;table className="table-auto w-full border-collapse border border-gray-300 mt-4">
+                  &lt;thead>
+                    &lt;tr className="bg-gray-100">
+                      &lt;th className="border border-gray-300 px-4 py-2">Código IPC&lt;/th>
+                      &lt;th className="border border-gray-300 px-4 py-2">Código Destino&lt;/th>
+                      &lt;th className="border border-gray-300 px-4 py-2">Nombre&lt;/th>
+                      &lt;th className="border border-gray-300 px-4 py-2">Nota&lt;/th>
+                      &lt;th className="border border-gray-300 px-4 py-2">Año&lt;/th>
+                      &lt;th className="border border-gray-300 px-4 py-2">Semestre&lt;/th>
+                    &lt;/tr>
+                  &lt;/thead>
+                  &lt;tbody>
                     {historial.map((item, i) => (
-                      <tr key={i}>
-                        <td className="border border-gray-300 px-4 py-2">{item.codigo_IPC}</td>
-                        <td className="border border-gray-300 px-4 py-2">{item.codigo_destino}</td>
-                        <td className="border border-gray-300 px-4 py-2">{item.nombre}</td>
-                        <td className="border border-gray-300 px-4 py-2">{item.nota}</td>
-                        <td className="border border-gray-300 px-4 py-2">{item.ano}</td>
-                        <td className="border border-gray-300 px-4 py-2">{item.semestre}</td>
-                      </tr>
+                      &lt;tr key={i}>
+                        &lt;td className="border border-gray-300 px-4 py-2">{item.codigo_IPC}&lt;/td>
+                        &lt;td className="border border-gray-300 px-4 py-2">{item.codigo_destino}&lt;/td>
+                        &lt;td className="border border-gray-300 px-4 py-2">{item.nombre}&lt;/td>
+                        &lt;td className="border border-gray-300 px-4 py-2">{item.nota}&lt;/td>
+                        &lt;td className="border border-gray-300 px-4 py-2">{item.ano}&lt;/td>
+                        &lt;td className="border border-gray-300 px-4 py-2">{item.semestre}&lt;/td>
+                      &lt;/tr>
                     ))}
-                  </tbody>
-                </table>
-              </div>
+                  &lt;/tbody>
+                &lt;/table>
+              &lt;/div>
             ))}
-          </div>
+          &lt;/div>
         ) : (
-          noStudentsFound && (
-            <div className="text-red-600 font-semibold mt-4">
+          noStudentsFound &amp;&amp; (
+            &lt;div className="text-red-600 font-semibold mt-4">
               No hay historial académico disponible para esta carrera.
-            </div>
+            &lt;/div>
           )
         )}
-      </div>
+      &lt;/div>
 
-      <Modal
+      &lt;Modal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           title="Error"
           message={modalMessage}
         />
-    </div>
+    &lt;/div>
   );
 };
 
 export default SeleccionarCarrera;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#BotonesAlumnos">BotonesAlumnos</a></li><li><a href="global.html#BotonesCertificados">BotonesCertificados</a></li><li><a href="global.html#ConfigModal">ConfigModal</a></li><li><a href="global.html#HistorialAcademico">HistorialAcademico</a></li><li><a href="global.html#IngresarAlumno">IngresarAlumno</a></li><li><a href="global.html#IngresarListado">IngresarListado</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#Logs">Logs</a></li><li><a href="global.html#SeleccionarCarrera">SeleccionarCarrera</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jun 25 2025 12:32:06 GMT-0400 (hora estándar de Chile)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

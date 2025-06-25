@@ -1,4 +1,32 @@
-import React, { useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/configModal.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/configModal.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from "react";
 
 /**
  * Modal de configuración para opciones avanzadas del sistema.
@@ -97,20 +125,20 @@ const ConfigModal = ({ isOpen, onClose }) => {
   };
 
   return isOpen ? (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-2xl">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold">Configuración</h2>
-          <button
+    &lt;div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      &lt;div className="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-2xl">
+        &lt;div className="flex justify-between items-center mb-4">
+          &lt;h2 className="text-xl font-semibold">Configuración&lt;/h2>
+          &lt;button
             className="text-gray-500 hover:text-gray-700"
             onClick={onClose}
           >
             ✕
-          </button>
-        </div>
+          &lt;/button>
+        &lt;/div>
 
-        <div className="flex border-b mb-4">
-          <button
+        &lt;div className="flex border-b mb-4">
+          &lt;button
             onClick={() => setActiveTab("shipping")}
             className={`flex-1 py-2 text-center ${
               activeTab === "shipping"
@@ -119,8 +147,8 @@ const ConfigModal = ({ isOpen, onClose }) => {
             }`}
           >
             Información de Envío
-          </button>
-          <button
+          &lt;/button>
+          &lt;button
             onClick={() => setActiveTab("address")}
             className={`flex-1 py-2 text-center ${
               activeTab === "address"
@@ -129,13 +157,13 @@ const ConfigModal = ({ isOpen, onClose }) => {
             }`}
           >
             Información de Dirección
-          </button>
-        </div>
+          &lt;/button>
+        &lt;/div>
 
-        {activeTab === "shipping" && (
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Información de Envío</h3>
-            <textarea
+        {activeTab === "shipping" &amp;&amp; (
+          &lt;div>
+            &lt;h3 className="text-lg font-semibold mb-4">Información de Envío&lt;/h3>
+            &lt;textarea
               value={formData.shipping.from}
               onChange={(e) =>
                 handleInputChange("shipping", "from", e.target.value)
@@ -143,7 +171,7 @@ const ConfigModal = ({ isOpen, onClose }) => {
               placeholder="De"
               className="w-full border p-2 mb-2 rounded"
             />
-            <textarea
+            &lt;textarea
               value={formData.shipping.to}
               onChange={(e) =>
                 handleInputChange("shipping", "to", e.target.value)
@@ -152,34 +180,34 @@ const ConfigModal = ({ isOpen, onClose }) => {
               className="w-full border p-2 mb-2 rounded"
             />
             {formData.shipping.cc.map((cc, index) => (
-              <div key={index} className="flex items-center gap-2 mb-2">
-                <textarea
+              &lt;div key={index} className="flex items-center gap-2 mb-2">
+                &lt;textarea
                   value={cc}
                   onChange={(e) => handleCCChange(index, e.target.value)}
                   placeholder={`C.C ${index + 1}`}
                   className="flex-1 border p-2 rounded"
                 />
-                <button
+                &lt;button
                   onClick={() => handleRemoveCC(index)}
                   className="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600"
                 >
                   Eliminar
-                </button>
-              </div>
+                &lt;/button>
+              &lt;/div>
             ))}
-            <button
+            &lt;button
               onClick={handleAddCC}
               className="bg-green-700 text-white py-1 px-4 rounded hover:bg-green-800"
             >
               Agregar C.C
-            </button>
-          </div>
+            &lt;/button>
+          &lt;/div>
         )}
 
-        {activeTab === "address" && (
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Información de Dirección</h3>
-            <input
+        {activeTab === "address" &amp;&amp; (
+          &lt;div>
+            &lt;h3 className="text-lg font-semibold mb-4">Información de Dirección&lt;/h3>
+            &lt;input
               type="text"
               value={formData.address.name}
               onChange={(e) =>
@@ -188,7 +216,7 @@ const ConfigModal = ({ isOpen, onClose }) => {
               placeholder="Nombre"
               className="w-full border p-2 mb-2 rounded"
             />
-            <input
+            &lt;input
               type="text"
               value={formData.address.address}
               onChange={(e) =>
@@ -197,21 +225,43 @@ const ConfigModal = ({ isOpen, onClose }) => {
               placeholder="Dirección"
               className="w-full border p-2 mb-2 rounded"
             />
-          </div>
+          &lt;/div>
         )}
 
-        <div className="flex justify-end gap-4 mt-4">
+        &lt;div className="flex justify-end gap-4 mt-4">
         
-          <button
+          &lt;button
             onClick={handleSave}
             className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
           >
             Guardar
-          </button>
-        </div>
-      </div>
-    </div>
+          &lt;/button>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
   ) : null;
 };
 
-export default ConfigModal;
+export default ConfigModal;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#BotonesAlumnos">BotonesAlumnos</a></li><li><a href="global.html#BotonesCertificados">BotonesCertificados</a></li><li><a href="global.html#ConfigModal">ConfigModal</a></li><li><a href="global.html#HistorialAcademico">HistorialAcademico</a></li><li><a href="global.html#IngresarAlumno">IngresarAlumno</a></li><li><a href="global.html#IngresarListado">IngresarListado</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#Logs">Logs</a></li><li><a href="global.html#SeleccionarCarrera">SeleccionarCarrera</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jun 25 2025 12:32:06 GMT-0400 (hora estándar de Chile)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

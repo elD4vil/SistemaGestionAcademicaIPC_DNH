@@ -1,4 +1,32 @@
-import React, { useEffect, useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/HistorialAcademico.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/HistorialAcademico.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DetallesEstudiante from "../components/DetallesEstudiante.jsx";
 import BotonEquivalencias from "../components/BotonEquivalencias.jsx";
@@ -94,52 +122,52 @@ const HistorialAcademico = () => {
   };
 
   return (
-    <div className="min-h-screen p-8 bg-gray-100 flex flex-col">
-      <div className="flex justify-between items-center mb-4 mt-14">
+    &lt;div className="min-h-screen p-8 bg-gray-100 flex flex-col">
+      &lt;div className="flex justify-between items-center mb-4 mt-14">
         {/* Información del estudiante en la parte izquierda */}
-        <DetallesEstudiante estudiante={estudiante} />
+        &lt;DetallesEstudiante estudiante={estudiante} />
         {/* Botones a la derecha */}
-        <div className="flex flex-col space-y-4">
+        &lt;div className="flex flex-col space-y-4">
           {/* Botón para ver equivalencias */}
-          <BotonEquivalencias
+          &lt;BotonEquivalencias
             mostrarEquivalencias={mostrarEquivalencias}
             onClick={handleClick}
           />
           {/* Botón para eliminar estudiante */}
-          <BotonEliminar rut={rut} />
-        </div>
-      </div>
+          &lt;BotonEliminar rut={rut} />
+        &lt;/div>
+      &lt;/div>
 
-      <div className="w-full mt-8">
+      &lt;div className="w-full mt-8">
         {/* Historial académico debajo */}
-        <h2 className="text-2xl font-bold mb-4 text-center">Historial Académico</h2>
+        &lt;h2 className="text-2xl font-bold mb-4 text-center">Historial Académico&lt;/h2>
 
         {/* Tarjeta estática con encabezados */}
-        <div className="flex justify-between text-sm bg-gray-800 p-2 rounded-lg shadow-lg mb-2">
-          <div className="w-1/5">
-            <p className="text-white">Código</p>
-          </div>
-          {mostrarEquivalencias && (
-            <div className="w-1/5">
-              <p className="text-white">Código Destino</p>
-            </div>
+        &lt;div className="flex justify-between text-sm bg-gray-800 p-2 rounded-lg shadow-lg mb-2">
+          &lt;div className="w-1/5">
+            &lt;p className="text-white">Código&lt;/p>
+          &lt;/div>
+          {mostrarEquivalencias &amp;&amp; (
+            &lt;div className="w-1/5">
+              &lt;p className="text-white">Código Destino&lt;/p>
+            &lt;/div>
           )}
-          <div className="w-1/5">
-            <p className="text-white">Nombre</p>
-          </div>
-          <div className="w-1/5">
-            <p className="text-white">Nota</p>
-          </div>
-          <div className="w-1/5">
-            <p className="text-white">Año</p>
-          </div>
-          <div className="w-1/5">
-            <p className="text-white">Semestre</p>
-          </div>
-        </div>
+          &lt;div className="w-1/5">
+            &lt;p className="text-white">Nombre&lt;/p>
+          &lt;/div>
+          &lt;div className="w-1/5">
+            &lt;p className="text-white">Nota&lt;/p>
+          &lt;/div>
+          &lt;div className="w-1/5">
+            &lt;p className="text-white">Año&lt;/p>
+          &lt;/div>
+          &lt;div className="w-1/5">
+            &lt;p className="text-white">Semestre&lt;/p>
+          &lt;/div>
+        &lt;/div>
 
         {/* Contenedor con desplazamiento para las tarjetas */}
-        <div className="flex justify-center overflow-y-auto max-h-96 flex-wrap transition-all duration-500 ease-in-out">
+        &lt;div className="flex justify-center overflow-y-auto max-h-96 flex-wrap transition-all duration-500 ease-in-out">
           {historial.length > 0 ? (
             historial.map((item, index) => {
               let codigoDestino = null;
@@ -151,7 +179,7 @@ const HistorialAcademico = () => {
                   (eq) => eq.codigo_IPC === item.codigo_IPC
                 );
                 codigoDestino = equivalencia ? equivalencia.codigo_destino : " ";
-                if (codigoDestino && codigoDestino.trim() !== "") {
+                if (codigoDestino &amp;&amp; codigoDestino.trim() !== "") {
                   estadoTarjeta = -2;
                   nombreAsignatura = equivalencia.nombre;
                 }
@@ -159,7 +187,7 @@ const HistorialAcademico = () => {
               //console.log(item.codigo_IPC_bruto);
 
               return (
-                <TarjetaHistorial
+                &lt;TarjetaHistorial
                   key={index}
                   codigoIPC={item.codigo_IPC}
                   codigoIPCBRUTO={item.codigo_IPC_bruto}
@@ -173,12 +201,35 @@ const HistorialAcademico = () => {
               );
             })
           ) : (
-            <p>No hay historial académico disponible</p>
+            &lt;p>No hay historial académico disponible&lt;/p>
           )}
-        </div>
-      </div>
-    </div>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
   );
 };
 
 export default HistorialAcademico;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#BotonesAlumnos">BotonesAlumnos</a></li><li><a href="global.html#BotonesCertificados">BotonesCertificados</a></li><li><a href="global.html#ConfigModal">ConfigModal</a></li><li><a href="global.html#HistorialAcademico">HistorialAcademico</a></li><li><a href="global.html#IngresarAlumno">IngresarAlumno</a></li><li><a href="global.html#IngresarListado">IngresarListado</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#Logs">Logs</a></li><li><a href="global.html#SeleccionarCarrera">SeleccionarCarrera</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Jun 25 2025 12:32:06 GMT-0400 (hora estándar de Chile)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -13,6 +13,11 @@ import LogsAlumnos from "./pages/logsAlumnos.jsx"; // Importa la nueva página d
 import SeleccionarCarrera from "./pages/SeleccionarCarrera.jsx";
 import PdfViewer from "./components/nominaPreview.jsx"
 
+/**
+ * 
+ * @returns {JSX.Element} Componente principal de la aplicación que maneja las rutas y el estado de autenticación del usuario.
+ */
+
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para controlar si el usuario está logueado
 

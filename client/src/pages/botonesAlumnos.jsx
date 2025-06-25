@@ -2,6 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaUser, FaBook, FaFileAlt } from "react-icons/fa";
 
+/**
+ * Página de botones para acciones de alumnos.
+ * Permite navegar a la importación de listados, historial académico y logs.
+ * @component
+ */
 const BotonesAlumnos = () => {
   const navigate = useNavigate();
 

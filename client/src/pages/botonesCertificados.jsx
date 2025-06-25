@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { FaUsers, FaFileAlt, FaCog } from "react-icons/fa";
 import ConfigModal from "./configModal.jsx";
 
+/**
+ * Página de botones para certificados.
+ * Permite navegar a la nómina de estudiantes y certificados detallados.
+ * @component
+ */
 const BotonesCertificados = () => {
   const navigate = useNavigate();
   const [isConfigOpen, setIsConfigOpen] = useState(false);
